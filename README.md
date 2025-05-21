@@ -27,29 +27,30 @@ This project automates the provisioning and configuration of AWS infrastructure 
    git clone https://github.com/your-username/cloud-infra-automation.git
    cd cloud-infra-automation
 2. Initialize and Apply Terraform Configuration
-   ```cd terraform
-   ```terraform init
-   ```terraform apply
-3. Run Ansible Playbook
-   ```cd ../ansible
+```bash
+   cd terraform
+   terraform init
+   terraform apply
+4. Run Ansible Playbook
+```bash
+   cd ../ansible
 ansible-playbook -i inventory playbook.yml
 4. Execute Deployment Script
-   ```cd ../scripts
-   ```chmod +x deploy.sh
-   ```./deploy.sh
-
-
-## CI/CD Workflow
+```bash
+   cd ../scripts
+   chmod +x deploy.sh
+   ./deploy.sh
+## CI/CD Workflows
 #### The project utilizes GitHub Actions for continuous integration and deployment. The workflow is defined in .github/workflows/ci-cd.yml and includes the following steps:
 
-Terraform Format Check: Ensures Terraform code is properly formatted.
+1. Terraform Format Check: Ensures Terraform code is properly formatted.
 
-Terraform Initialization and Validation: Initializes and validates Terraform configuration.
+2. Terraform Initialization and Validation: Initializes and validates Terraform configuration.
 
-Terraform Plan: Generates and displays an execution plan.
+3. Terraform Plan: Generates and displays an execution plan.
 
-Terraform Apply: Applies the Terraform configuration to provision infrastructure.
+4. Terraform Apply: Applies the Terraform configuration to provision infrastructure.
 
-Ansible Playbook Execution: Runs Ansible playbooks for configuration management.
+5. Ansible Playbook Execution: Runs Ansible playbooks for configuration management.
 
 To trigger the workflow, push changes to the master branch or open a pull request.
